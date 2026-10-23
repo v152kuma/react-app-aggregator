@@ -3,8 +3,6 @@ import { getRandomInt } from '../utils/GetRandom.js';
 
 const reactDescriptions = ['Fundamental', 'Core','Crucial']
 
- 
-
 function Header() {
 
   const description = reactDescriptions[getRandomInt(reactDescriptions.length)];
