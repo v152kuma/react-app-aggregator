@@ -1,8 +1,13 @@
 
 const TabButton = ({children}) => {
+
+    const handleClick = () => {
+        alert(`You clicked on ${children} tab`);
+    }
+
   return (
     <li>
-        <button>{children}</button>
+        <button onClick={handleClick}>{children}</button>
     </li>
   )
 }
