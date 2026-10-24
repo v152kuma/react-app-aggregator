@@ -8,7 +8,7 @@ import { CORE_CONCEPTS } from "./data/data.js";
 function App() {
 
   const handleClick = () => {
-        alert(`You clicked on ${children} tab`);
+        alert(`You clicked on tab`);
     }
     
   return (
