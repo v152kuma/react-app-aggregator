@@ -1,13 +1,10 @@
 
-const TabButton = ({children}) => {
+const TabButton = ({children, onSelect}) => {
 
-    const handleClick = () => {
-        alert(`You clicked on ${children} tab`);
-    }
 
   return (
     <li>
-        <button onClick={handleClick}>{children}</button>
+        <button onClick={onSelect}>{children}</button>
     </li>
   )
 }
