@@ -7,8 +7,10 @@ import { CORE_CONCEPTS } from "./data/data.js";
 
 function App() {
 
+  let selectedTab = "Initial Value";
   const handleClick = (selectedTab) => {
-        alert(`You selected the ${selectedTab} tab!`);
+        selectedTab = selectedTab;
+        console.log("Selected Tab: ", selectedTab);
     }
     
   return (
@@ -32,6 +34,7 @@ function App() {
           <TabButton onSelect={() => handleClick('Props')}>Props</TabButton>
           <TabButton onSelect={() => handleClick('State')}>State</TabButton>
           </menu> 
+         {selectedTab && <p>Selected Tab: {selectedTab}</p>}
         </section>
       </main>
     </div>
