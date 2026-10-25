@@ -1,5 +1,5 @@
 
-
+import {useState} from "react";
 import CoreConcepts from "./components/CoreConcepts.jsx";
 import Header from "./components/Header.jsx";
 import TabButton from "./components/TabButton.jsx";
@@ -7,10 +7,11 @@ import { CORE_CONCEPTS } from "./data/data.js";
 
 function App() {
 
-  let selectedTab = "Initial Value";
-  const handleClick = (selectedTab) => {
-        selectedTab = selectedTab;
-        console.log("Selected Tab: ", selectedTab);
+  const [selectedTab, setSelectedTab] = useState("Initial Value");
+  
+  const handleClick = (tab) => {
+        setSelectedTab(tab);
+        console.log("Selected Tab: ", tab);
     }
     
   return (
