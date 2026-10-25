@@ -7,8 +7,8 @@ import { CORE_CONCEPTS } from "./data/data.js";
 
 function App() {
 
-  const handleClick = () => {
-        alert(`You clicked on tab`);
+  const handleClick = (selectedTab) => {
+        alert(`You selected the ${selectedTab} tab!`);
     }
     
   return (
@@ -27,10 +27,10 @@ function App() {
         <section id ="examples">
           <h2>Examples</h2>
           <menu>
-          <TabButton onSelect={handleClick}>Components</TabButton>
-          <TabButton onSelect={handleClick}>JSX</TabButton>
-          <TabButton onSelect={handleClick}>Props</TabButton>
-          <TabButton onSelect={handleClick}>State</TabButton>
+          <TabButton onSelect={() => handleClick('Components')}>Components</TabButton>
+          <TabButton onSelect={() => handleClick('JSX')}>JSX</TabButton>
+          <TabButton onSelect={() => handleClick('Props')}>Props</TabButton>
+          <TabButton onSelect={() => handleClick('State')}>State</TabButton>
           </menu> 
         </section>
       </main>
