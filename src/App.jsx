@@ -17,7 +17,7 @@ function App() {
     }
     
   return (
-    <div>
+    <>
      <Header />
       <main>
         <section id="core-concepts">
@@ -40,7 +40,7 @@ function App() {
           {!selectedTab ? <Message /> : <CoreContent selectedTab={selectedTab} /> }
         </section>
       </main>
-    </div>
+    </>
   );
 }
 
