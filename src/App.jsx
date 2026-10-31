@@ -4,10 +4,12 @@ import CoreConcepts from "./components/CoreConcepts.jsx";
 import Header from "./components/Header.jsx";
 import TabButton from "./components/TabButton.jsx";
 import { CORE_CONCEPTS, EXAMPLES } from "./data/data.js";
+import Message from "./components/Message.jsx";
+import CoreContent from "./components/CoreContent.jsx";
 
 function App() {
 
-  const [selectedTab, setSelectedTab] = useState("components");
+  const [selectedTab, setSelectedTab] = useState();
   
   const handleClick = (tab) => {
         setSelectedTab(tab);
@@ -30,16 +32,13 @@ function App() {
         <section id ="examples">
           <h2>Examples</h2>
           <menu>
-          <TabButton onSelect={() => handleClick('components')}>Components</TabButton>
-          <TabButton onSelect={() => handleClick('jsx')}>JSX</TabButton>
-          <TabButton onSelect={() => handleClick('props')}>Props</TabButton>
-          <TabButton onSelect={() => handleClick('state')}>State</TabButton>
+          {CORE_CONCEPTS.map((concept) => (
+            <TabButton key={concept.title} onSelect={() => handleClick(concept.title.toLowerCase())}>
+              {concept.title.toLocaleUpperCase()}
+            </TabButton>
+          ))}
           </menu> 
-          <div id="tab-content">
-             <h3>{EXAMPLES[selectedTab].title}</h3>
-             <p>{EXAMPLES[selectedTab].description}</p>
-             <pre><code>{EXAMPLES[selectedTab].code}</code></pre>
-          </div>
+          {!selectedTab ? <Message /> : <CoreContent selectedTab={selectedTab} /> }
         </section>
       </main>
     </div>
