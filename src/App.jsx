@@ -32,7 +32,7 @@ function App() {
           <h2>Examples</h2>
           <menu>
           {CORE_CONCEPTS.map((concept) => (
-            <TabButton key={concept.title} onSelect={() => handleClick(concept.title.toLowerCase())}>
+            <TabButton  key={concept.title} onSelect={() => handleClick(concept.title.toLowerCase())} isSelected={selectedTab === concept.title.toLowerCase()}>
               {concept.title.toLocaleUpperCase()}
             </TabButton>
           ))}
