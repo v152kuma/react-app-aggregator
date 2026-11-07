@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from 'react';
 const CoreConcepts = ({image, title, description}) => {
   return (
     <li>
