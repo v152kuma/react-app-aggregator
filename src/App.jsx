@@ -6,6 +6,7 @@ import TabButton from "./components/TabButton.jsx";
 import { CORE_CONCEPTS, EXAMPLES } from "./data/data.js";
 import Message from "./components/Message.jsx";
 import CoreContent from "./components/CoreContent.jsx";
+import CoreConceptsSection from "./components/CoreConceptsSection.jsx";
 
 function App() {
 
@@ -20,14 +21,7 @@ function App() {
     <>
      <Header />
       <main>
-        <section id="core-concepts">
-          <h2>Core Concepts</h2>
-          <ul>
-            {CORE_CONCEPTS.map((concept) => (
-              <CoreConcepts key={concept.title} {...concept} />
-            ))}
-          </ul>
-        </section>
+        <CoreConceptsSection />
         <section id ="examples">
           <h2>Examples</h2>
           <menu>
