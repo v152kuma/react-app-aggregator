@@ -4,6 +4,7 @@ import { CORE_CONCEPTS } from '../data/data.js';
 import TabButton from './TabButton.jsx';
 import Message from './Message.jsx';
 import CoreContent from './CoreContent.jsx';
+import Section from './Section.jsx';
 
 function ExampleSection() {
 
@@ -16,8 +17,7 @@ function ExampleSection() {
     }
 
   return (
-    <section id ="examples">
-          <h2>Examples</h2>
+    <Section title="Examples" id="examples">
           <menu>
           {CORE_CONCEPTS.map((concept) => (
             <TabButton  key={concept.title} onSelect={() => handleClick(concept.title.toLowerCase())} isSelected={selectedTab === concept.title.toLowerCase()}>
@@ -26,7 +26,7 @@ function ExampleSection() {
           ))}
           </menu> 
           {!selectedTab ? <Message /> : <CoreContent selectedTab={selectedTab} /> }
-        </section>
+     </Section>
   )
 }
 
